@@ -24,4 +24,16 @@ function createGalleryItems(items) {
             ';
     }
 
-).join('')}
+    ).join('')
+}
+
+// Реалізація делегування на div.gallery і отримання url великого зображення.
+
+galleryContanier.addEventListener('click', onGalleryContanierClick)
+
+function onGalleryContanierClick(event) {
+    event.preventDefault();
+    if (event.target.nodeName !== 'IMG') {
+        return;
+    }
+}
