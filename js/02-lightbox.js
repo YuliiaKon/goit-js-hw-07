@@ -23,9 +23,6 @@ function createGalleryItems(items) {
         ).join('');
 }
 
-
-// Реалізація делегування на div.gallery і отримання url великого зображення.
-
 galleryContanier.addEventListener('click', onGalleryContanierClick)
 
 function onGalleryContanierClick(event) {
@@ -34,8 +31,6 @@ function onGalleryContanierClick(event) {
         return;
     }
 
-// Підключення скрипту і стилів бібліотеки модального вікна basicLightbox. 
-// Використовуй CDN сервіс jsdelivr і додай у проект посилання на мініфіковані(.min) файли бібліотеки.
 const instance = basicLightbox.create(`
 <img src="${event.target.dataset.source}" width="800" height="600">`);
 instance.show();
@@ -47,8 +42,7 @@ divRef.addEventListener("keydown", (event) => {
 });
 }
 
-
-
+const lightbox = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250 });
 
 
 console.log(galleryItems);
