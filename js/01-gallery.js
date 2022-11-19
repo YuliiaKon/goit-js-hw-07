@@ -7,11 +7,11 @@ const galleryMarkup = createGalleryItems(galleryItems);
 
 galleryContanier.insertAdjacentHTML('beforeend', galleryMarkup);
 
-function createGalleryItems(galleryItems) {
-    return galleryItems
-        .map(({preview, original, description}) => {
+function createGalleryItems(items) {
+    return items
+        .map(({ preview, original, description }) => {
             return `
-            < div class="gallery__item" >
+            <div class="gallery__item">
                 <a class="gallery__link" href="${original}">
                     <img
                         class="gallery__image"
@@ -19,10 +19,10 @@ function createGalleryItems(galleryItems) {
                         data-source="${original}"
                         alt="${description}"
                     />
-                </a> </div>`;
-    }
-
-    ).join('')
+                </a>
+                </div>`;
+        }
+        ).join('');
 }
 
 // Реалізація делегування на div.gallery і отримання url великого зображення.
